@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercise 2.2 - Bootstrap JS Plugin</title>
+
+  <!-- Local Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h1 class="text-primary">Bootstrap Tooltip Example</h1>
+    <p>Hover over the button to see a tooltip:</p>
+    
+    <!-- Tooltip-enabled button -->
+    <button type="button" class="btn btn-success" data-bs-toggle="tooltip" title="Hello! I am a tooltip.">
+      Hover me
+    </button>
+  </div>
+
+  <!-- Bootstrap Bundle JS (includes Popper) -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+  <!-- Tooltip Initialization Script -->
+  <script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 16.2 - Badge Overlay</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <style>
+    .image-container {
+      position: relative;
+      display: inline-block;
+    }
+    .badge-overlay {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container my-5 text-center">
+  <h2>Image with Badge Overlay</h2>
+  <div class="image-container">
+    <img src="https://via.placeholder.com/200" alt="Image" class="img-fluid rounded" />
+    <span class="badge bg-danger badge-overlay">New</span>
+  </div>
+</div>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

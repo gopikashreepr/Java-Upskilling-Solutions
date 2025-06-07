@@ -1,0 +1,13 @@
+1. css/ folder:
+   - Contains Bootstrap's compiled CSS files.
+   - Includes:
+     • bootstrap.css – full version for development.
+     • bootstrap.min.css – minified for production.
+     • .map files – for browser debugging tools.
+
+2. js/ folder:
+   - Contains Bootstrap’s JavaScript plugins.
+   - Includes:
+     • bootstrap.js – unminified.
+     • bootstrap.min.js – minified.
+     • bootstrap.bundle.min.js – includes Bootstrap + Popper.js in one file.

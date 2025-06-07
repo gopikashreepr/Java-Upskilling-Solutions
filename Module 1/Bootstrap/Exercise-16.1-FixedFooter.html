@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 16.1 - Fixed Footer</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <style>
+    body {
+      padding-bottom: 60px; /* Space for fixed footer */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="my-5">Content Above Footer</h1>
+  <p>Scroll down to see the fixed footer at the bottom.</p>
+</div>
+
+<footer class="position-fixed bottom-0 start-0 w-100 bg-dark text-white text-center py-3">
+  Fixed Footer - Always visible at the bottom
+</footer>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

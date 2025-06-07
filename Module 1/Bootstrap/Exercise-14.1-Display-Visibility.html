@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 14.1 - Display and Visibility</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+
+<div class="container my-5">
+  <h2 class="mb-4">Responsive Visibility</h2>
+
+  <div class="bg-info p-3 mb-3 d-none d-md-block">
+    <p>This box is hidden on small screens and visible from medium devices upwards.</p>
+  </div>
+
+  <div class="bg-warning p-3 mb-3 d-none d-lg-flex">
+    <p>This box is hidden below large screens and flex visible on large screens and above.</p>
+  </div>
+
+  <div class="bg-secondary p-3 mb-3 d-block d-md-none">
+    <p>This box is visible only on small screens.</p>
+  </div>
+</div>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
