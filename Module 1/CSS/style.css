@@ -1,0 +1,574 @@
+/* Body background: fallback color + background image */
+body {
+  background-color: #f0f4f8; /* fallback light blue-gray */
+  /* background-image: url('cityscape-bg2.jpeg'); replace with your image path */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50; /* default text color */
+}
+
+/* Section headers (h2) with linear gradient text effect */
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  text-align: center;
+  /* Gradient text: fallback color */
+  background: linear-gradient(90deg, #00467f, #a5cc82);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.event-registration, .feedback-form {
+  /* max-width: 500px;       /* limits max width */
+  margin: 20px auto;      /* centers horizontally with top & bottom margin */
+  padding: 20px;          /* inside spacing */
+  background-color: #f9f9f9;  /* subtle background */
+  border: 1px solid #ccc;      /* subtle border */
+  border-radius: 8px;          /* rounded corners */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle shadow */
+  box-sizing: border-box;       /* include padding in width */
+  width: 500px; 
+}
+
+
+/* Example: Using RGBA for event container backgrounds for subtle transparency */
+/* Add border, padding, margin to event boxes */
+.event-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.event-box {
+  flex: 1 1 45%;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  min-width: 300px;
+  max-width: 500px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Outline for focused form fields */
+input:focus, textarea:focus, select:focus {
+  outline: 3px solid rgba(0, 70, 127, 0.7); /* Blue focus outline */
+  outline-offset: 3px;                       /* Gap between outline and element */
+  transition: outline 0.3s ease-in-out;
+}
+
+/* Optional: subtle hover effect on input fields */
+input:hover, textarea:hover, select:hover {
+  border-color: #00467f;
+}
+
+/* Comments on visibility */
+
+/*
+visibility: hidden;
+- Hides the element but keeps its space in the layout.
+- Useful when you want to hide content temporarily without shifting page layout.
+
+display: none;
+- Removes the element completely from the layout.
+- Other elements move to fill the space.
+- Use when you want to completely hide something without leaving gaps.
+*/
+
+/* Example: hide element but keep space */
+.hidden-visibility {
+  visibility: hidden;
+}
+
+/* Example: hide element and remove space */
+.hidden-display {
+  display: none;
+}
+
+
+/* Highlight class text with HEX color */
+.highlight {
+  color: #e67e22; /* council branding orange */
+  font-weight: 600;
+  text-align: center;
+}
+
+/* #welcomeBanner background with RGBA */
+#welcomeBanner {
+  background-color: rgba(230, 126, 34, 0.15); /* very light transparent orange */
+  padding: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid #e67e22;
+}
+/* Base font settings for body */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2c3e50;
+  background-color: #f0f4f8; /* keep your existing background */
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings: use serif font for contrast and style */
+h1, h2, h3 {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  color: #00467f; /* consistent dark blue */
+}
+
+#home p {
+  text-align: center;
+}
+
+/* Paragraphs and descriptive text */
+p, li {
+  font-style: normal;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  text-align: justify;
+  margin-bottom: 1em;
+  color: #3a4a5a;
+}
+
+/* Special text: highlights and small notes */
+.highlight {
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: #e67e22;
+}
+
+/* Buttons and labels */
+button, label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #fff;
+  background-color: #00467f;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #00375f;
+}
+
+/* Forms and inputs */
+input, select, textarea {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  line-height: 1.4;
+  margin-bottom: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+/* Default link color and style */
+a:link {
+  color: #007acc;       /* Soft blue */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+a:hover {
+  color: #00467f;       /* Darker blue on hover */
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Visited link */
+a:visited {
+  color: #5a5a8a;       /* Muted purple-ish */
+}
+
+/* Active link (while clicking) */
+a:active {
+  color: #002f4b;       /* Dark navy */
+  text-decoration: none;
+}
+/* General unordered lists */
+ul {
+  list-style-type: disc;            /* default bullet */
+  list-style-position: outside;     /* bullet outside */
+  margin-left: 1.5em;               /* spacing from left */
+  padding-left: 0;
+  color: #2c3e50;
+}
+
+/* List items spacing */
+li {
+  margin-bottom: 0.5em;
+  padding-left: 0.25em;
+}
+
+/* Nav menus: remove bullets and inline display */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px; /* space between menu items */
+}
+
+/* Nav list items: reset margin and padding for better spacing */
+nav ul li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Nav links inside nav */
+nav ul li a {
+  color: #00467f;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #e0e7f3;
+  color: #002f4b;
+}
+/* Base table styles */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Collapse borders into single line */
+  margin: 20px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Header cells */
+th {
+  background-color: #00467f;  /* Dark blue */
+  color: #fff;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Table data cells */
+td {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+/* Zebra striping for rows */
+tbody tr:nth-child(even) {
+  background-color: rgba(0, 70, 127, 0.1); /* light blue tint */
+}
+
+/* Hover effect for rows */
+tbody tr:hover {
+  background-color: rgba(0, 70, 127, 0.2);
+  cursor: pointer;
+}
+
+#contact p {
+  text-align: center;
+}
+
+#newsArticle {
+    padding: 15px;
+    background-color: #f5f5f5;
+    margin: 20px auto;
+    max-width: 900px;
+    font-family: 'Merriweather', serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+
+/* Optional: Style the heading */
+#newsArticle h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #00467f;
+}
+
+.form-section-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.form-box {
+  flex: 1 1 45%;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+}
+/* Gallery styles with smaller image sizes */
+table {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+td {
+    padding: 15px;
+}
+
+.gallery-img {
+    width: 120px; /* reduced size */
+    height: auto;
+    border: 2px solid #555;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+caption {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px auto;
+  width: 100%;
+}
+#videoMessage {
+  text-align: center;
+  font-weight: 600; /* optional: make it a bit bold */
+  margin-top: 10px;  /* optional spacing from the video */
+  color: #00467f;    /* optional color to match your theme */
+}
+
+#promoVideo {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#geolocation {
+  display: center;
+  flex: 1 1 45%;
+  flex-direction: column;  /* stack children vertically */
+  align-items: center;     /* center horizontally */
+  justify-content: center; /* center vertically */
+  height: 150px;           /* or whatever height you want to give the box */
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;  /* optional, just for visual */
+  border-radius: 10px;
+  width: 300px;
+  min-width: 300px;
+  max-width: 500px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#geolocation button {
+  padding: 10px 25px;
+  font-weight: 700;
+  background-color: #00467f;
+  align-items: center; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+#geolocation button:hover {
+  background-color: #00375f;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 0.9em;
+}
+
+footer p {
+    text-align: center !important;
+}
+
+#spinner {
+  font-weight: bold;
+  color: #555;
+  margin: 10px 0;
+}
+
+/* Base styles assumed for nav, images, fonts etc */
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  
+  /* Stack navigation links vertically */
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    margin: 10px 0;
+  }
+  
+  nav ul li a {
+    font-size: 1.2rem; /* Slightly bigger tap targets */
+    padding: 8px 12px;
+  }
+  
+.gallery-img {
+        width: 80px;  /* smaller on mobile */
+    }
+    /* Container for event registration and feedback */
+.event-registration, .feedback-form {
+    max-width: 500px;         /* limit width */
+    margin: 20px auto;        /* center horizontally with vertical spacing */
+    padding: 20px;
+    border: 1px solid #ccc;   /* subtle border */
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;   /* include padding in width */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Optional: headings inside forms */
+.event-registration h2, .feedback-form h2 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+/* Keep buttons consistent */
+.event-registration button, .feedback-form button {
+    background-color: #3498db;
+    color: white;
+    display: center;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.event-registration button:hover, .feedback-form button:hover {
+    background-color: #2980b9;
+}
+
+  .video-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#promoVideo {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    align-items: center;
+}
+  
+  /* Reduce font sizes */
+  body, p, label, input, select, textarea, button {
+    font-size: 90%;
+  }
+  
+  /* Parent container for side-by-side layout */
+.event-row {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .event-box {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+.form-section-row {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .form-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Sections width */
+  section, .event-box {
+    width: 95vw;
+    margin: 0 auto 20px auto;
+  }
+  
+  /* Table responsive: make it scroll horizontally */
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* For general layout padding and margin */
+  body {
+    padding: 10px 5vw;
+  }
+}
