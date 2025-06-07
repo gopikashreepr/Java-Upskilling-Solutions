@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="help.html" target="_blank">Help</a></li> <!-- External help link -->
+        </ul>
+    </nav>
+
+    <!-- Welcome Banner -->
+    <div id="welcomeBanner">
+        Welcome back, <span class="highlight">Resident!</span>
+        <br>
+        <span style="color: rgb(236, 102, 102); font-weight: bold;">Special Offer: 50% off on registration fees this week!</span>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Welcome to the <span class="highlight">Local Community Event Portal</span></h1>
+        <p>Find and register for community events, access services, and more.</p>
+    </section>
+
+    <div class="event-row">
+        <!-- Events Section -->
+         <!-- Geolocation Section -->
+        <section id="geolocation" class="event-box">
+            <h2>Find Nearby Events</h2>
+            <button onclick="findNearbyEvents()">Find Nearby Events</button>
+            <p id="geoStatus" style="font-weight: bold; margin-top: 10px;"></p>
+            <p id="coords"></p>
+        </section>
+        <section id="events" class="event-box">
+            <h2>Upcoming Events</h2>
+            <p class="highlight">Don't miss the Summer Festival this weekend!</p>
+            <label for="categoryFilter">Filter by Category:</label>
+            <select id="categoryFilter">
+                <option value="">All</option>
+                <option value="Health">Health</option>
+                <option value="Environment">Environment</option>
+                <option value="Festival">Festival</option>
+                <option value="Music">Music</option>
+                <option value="Workshop">Workshop</option>
+            </select>
+
+            <label for="searchInput">Search by Event Name:</label>
+            <input type="text" id="searchInput" placeholder="Type to search..." />
+
+            <!-- You can add the events container here if you plan to generate events dynamically -->
+            <div id="eventsContainer">
+                <div id="spinner" style="display: none;">Loading events...</div>
+                <ul id="event-list"></ul>
+            </div>
+        </section>
+    </div>
+
+    <section id="videoInvite">
+    <h2>Event Promo Video</h2>
+
+    <div class="video-wrapper">
+        <video id="promoVideo" width="480" controls>
+            <source src="promo1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <p id="videoMessage" style="color: green; font-weight: bold; margin-top: 10px;"></p>
+</section>
+
+
+
+    <!-- Event Gallery Section -->
+    <section id="gallery">
+        <h2>Past Community Events</h2>
+    
+        <table>
+            <caption>Snapshots from Previous Events</caption>
+            <tr>
+                <td>
+                    <figure>
+                        <img src="event1.jpg" alt="Tree Plantation Drive" title="Tree Plantation Drive" class="gallery-img">
+                        <figcaption>Tree Plantation Drive</figcaption>
+                    </figure>
+                </td>
+                <td>
+                    <figure>
+                        <img src="event2.jpg" alt="Health Camp" title="Health Camp" class="gallery-img">
+                        <figcaption>Free Health Checkup Camp</figcaption>
+                    </figure>
+                </td>
+                <td>
+                    <figure>
+                        <img src="event3.jpg" alt="Food Distribution" title="Food Distribution" class="gallery-img">
+                        <figcaption>Community Food Drive</figcaption>
+                    </figure>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <figure>
+                        <img src="event4.jpg" alt="Yoga Day" title="Yoga Day Celebration" class="gallery-img">
+                        <figcaption>Yoga Day Celebration</figcaption>
+                    </figure>
+                </td>
+                <td>
+                    <figure>
+                        <img src="event5.jpg" alt="Independence Day" title="Independence Day Event" class="gallery-img">
+                        <figcaption>Independence Day Function</figcaption>
+                    </figure>
+                </td>
+                <td>
+                    <figure>
+                        <img src="event6.jpg" alt="Art Contest" title="Art Contest" class="gallery-img">
+                        <figcaption>Children's Art Contest</figcaption>
+                    </figure>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Registration Form Section -->
+    <div class="form-section-row">
+  <div class="form-box event-registration">
+        <h2>Event Registration</h2>
+        <form id="eventForm" onsubmit="handleSubmit(event)">
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required autofocus><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required><br><br>
+
+            <label for="date">Event Date:</label><br>
+            <input type="date" id="date" name="date" required><br><br>
+
+            <label for="eventType">Event Type:</label><br>
+            <select id="eventType" name="eventType" required>
+                <option value="">--Select--</option>
+                <option value="health">Health Camp</option>
+                <option value="environment">Tree Plantation</option>
+                <option value="festival">Cultural Festival</option>
+            </select><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" placeholder="Any specific request or comment..." rows="4" cols="40"></textarea><br><br>
+
+            <button type="submit">Register</button>
+            <br><br>
+            <output id="confirmationMsg"></output>
+
+            <button type="button" onclick="clearPreferences()" style="margin-top: 10px;">Clear Preferences</button>
+        </form>
+    </div>
+
+    <div class="form-box feedback-form">
+        <h2>Event Feedback</h2>
+        <form id="feedbackForm" onsubmit="return false;">
+            <!-- Phone Number with onblur validation -->
+            <label for="phone">Phone Number:</label><br>
+            <input type="text" id="phone" name="phone" placeholder="Enter 10-digit phone number" onblur="validatePhone()" required><br><br>
+
+            <!-- Dropdown with onchange to show event fee -->
+            <label for="eventSelect">Select Event:</label><br>
+            <select id="eventSelect" onchange="showEventFee()" required>
+                <option value="">--Select--</option>
+                <option value="health">Health Camp - $10</option>
+                <option value="environment">Tree Plantation - $5</option>
+                <option value="festival">Cultural Festival - $15</option>
+            </select>
+            <p id="eventFee" style="font-weight:bold; margin-top: 5px;"></p><br>
+
+            <!-- Feedback textarea with key events and char count -->
+            <label for="feedbackText">Your Feedback:</label><br>
+            <textarea id="feedbackText" name="feedbackText" rows="4" cols="50" placeholder="Write your feedback here..." onkeydown="countChars()" onkeyup="countChars()" maxlength="250"></textarea><br>
+            <small>Characters typed: <span id="charCount">0</span>/250</small><br><br>
+
+            <!-- Submit button with onclick confirmation -->
+            <button type="submit" onclick="submitFeedback()">Submit Feedback</button>
+        </form>
+
+        <!-- Image with ondblclick to enlarge
+        <h3>Double-click the image to enlarge</h3>
+        <img src="event1.jpg" alt="Event Image" title="Double click to enlarge" id="eventImage" ondblclick="enlargeImage()" style="width:200px; cursor:pointer; border:2px solid #555; border-radius:8px;"> -->
+    </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email us at: <strong>support@localevents.org</strong></p>
+    </section>
+
+    <section id="newsArticle">
+        <h2>Community Bulletin</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. 
+            Cras venenatis euismod malesuada. Nullam ac erat ante. Suspendisse potenti. Morbi mattis lorem sed lacus 
+            condimentum, non ultricies justo congue. Pellentesque habitant morbi tristique senectus et netus et malesuada 
+            fames ac turpis egestas. Donec in sapien nec nunc gravida sagittis. Proin nec mi sit amet elit pretium 
+            elementum. Maecenas dignissim massa eu orci vulputate, nec luctus odio bibendum. Nullam vitae nulla 
+            fermentum, semper sem ut, cursus orci.
+        </p>
+        <p>
+            Sed rhoncus, purus in finibus sagittis, ligula orci commodo justo, sed maximus magna risus a erat. Quisque 
+            maximus enim ut urna suscipit, eu cursus odio convallis. Fusce in nulla ut enim vulputate tristique. 
+            Curabitur placerat justo non purus cursus, quis bibendum massa sollicitudin. Donec sed risus non risus 
+            dapibus vehicula a sed magna. Duis a nibh velit. In feugiat commodo purus ut consequat.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Local City Council. All rights reserved.</p>
+    </footer>
+    <!-- jQuery CDN (add in <head> or before closing </body>) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    // 1. Handle click event on registration button
+    $('#eventForm button[type="submit"]').click(function(event) {
+        event.preventDefault(); // prevent form submission
+        $('#confirmationMsg').text('Thank you for registering!').fadeIn().delay(2000).fadeOut();
+    });
+
+    // 2. Use fadeIn/fadeOut for event cards on hover (assuming event cards exist)
+    $('.event-box').hover(
+        function () {
+            $(this).fadeTo('fast', 1); // fade in
+        },
+        function () {
+            $(this).fadeTo('fast', 0.8); // fade out to slightly transparent
+        }
+    );
+</script>
+    <script src="main.js"></script>
+</body>
+</html>
